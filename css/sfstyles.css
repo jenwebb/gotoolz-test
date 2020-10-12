@@ -301,6 +301,7 @@ section.generic {
 }
 section.faq {
     padding-top: 140px;
+    font-size: 18px;
 }
 .privacy h1 {
         font-size: 1.75rem;
@@ -328,6 +329,10 @@ section.faq {
 .faq button.collapsed[data-toggle="collapse"]::after {
     transform: rotate(-90deg);
 }
+ul.sf-list li{
+    margin-bottom: 0.75rem;
+}
+
 footer {
     padding: 33px 100px 23px;
     place-items: center;
