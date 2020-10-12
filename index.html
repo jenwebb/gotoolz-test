@@ -293,6 +293,11 @@
                     });
                     console.log(data);
                 $(this).find('button[type="submit"]').attr('disabled');
+                $.ajaxSetup({
+                    'beforeSend': function(xhr) {
+                        xhr.setRequestHeader("Referrer-Policy", "origin-when-cross-origin")
+                    }
+                })
                 $.ajax({
                     method: "POST",
                     data: data,
