@@ -76,7 +76,10 @@ nav img {
     -webkit-box-flex: 1;
     flex-grow: 1;
 }
-
+.nav-inner a {
+    color: #333;
+    text-decoration: none;
+}
 .nav-menu {
     -webkit-box-flex: 1;
     flex-grow: 1;
