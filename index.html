@@ -241,6 +241,9 @@
                                 <label for="last-name">Last name</label>
                                 <input type="text" class="form-control"
                                     id="last-name" required>
+                                <div class="progress" id="meetup__msg_progress" style="display: none; height: 8px;">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"  style="width: 85%;"></div>
+                                </div>
                                 <div class="valid-feedback">
                                     <i class="fas fa-check"></i>
                                 </div>
@@ -309,7 +312,7 @@
                         getMail: $('#get-mail').is(':checked')
                     });
                     console.log(data);
-                $(this).find('button[type="submit"]').attr('disabled');
+                    $('#register-form').find('button[type=submit]').attr('disabled', true);
                 $.ajax({
                     method: "POST",
                     data: data,
@@ -317,15 +320,14 @@
                     contentType: 'application/json',
                     url: "https://8ioju9bn27.execute-api.us-east-1.amazonaws.com/prod/"
                 })
-                    .done(function(){
+                    .always(function(){
                         $('.valid-feedback').show();
-                    })
-                    .fail(function(){
-                        $(this).find('button[type="submit"]').removeAttr('disabled');
-                    })
+                    });
             });
             $('#register').on('show.bs.modal', function(){
                 $('#register-form')[0].reset();
+                $('.valid-feedback').hide();
+                $(this).find('button[type=submit]').attr('disabled', false);
             });
         });
     </script>
