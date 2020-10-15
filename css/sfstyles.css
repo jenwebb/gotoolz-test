@@ -492,6 +492,10 @@ footer {
     }
 }
 @media only screen and (min-width: 768px) and (max-width:970px) {
+    .home-heading {
+        font-size: 3.5rem;
+        line-height: 4.1rem;
+    }
     .nav-inner{
         padding-left: 0;
         height: 75px;
@@ -504,6 +508,16 @@ footer {
     }
     nav button {
         font-size: 1.25rem;
+    }
+    .section-one {
+        min-height: 480px;
+    }
+    .section-two, .section-four, .section-five, .section-six {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    section#mission-statement {
+        padding: 10px 40px;
     }
     .diagrams {
         height: 58rem;
@@ -531,6 +545,9 @@ footer {
     }
     .diagram-middle i.fas.fa-desktop {
         font-size: 15.25rem;
+    }
+    footer {
+        height: auto;
     }
 }
 @media only screen and (max-width:767px){
