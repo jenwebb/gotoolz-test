@@ -373,6 +373,10 @@ footer {
     width: 100%;
 }
 @media only screen and (max-width: 970px) {
+    html, body{
+        overflow-y: scroll; /* has to be scroll, not auto */
+        -webkit-overflow-scrolling: touch;
+    }
     .main-content {
         margin-top: 90px;
     }
