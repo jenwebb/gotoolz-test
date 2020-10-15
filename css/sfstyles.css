@@ -534,6 +534,12 @@ footer {
     }
 }
 @media only screen and (max-width:767px){
+    .home-inner {
+        font-size: 1.1rem;
+    }
+    .service h2 {
+        font-size: 1.4rem;
+    }
     footer {
         font-size: 13px;
     }
@@ -545,5 +551,10 @@ footer {
     }
     .social-links a i {
         font-size: 1.5rem;
+    }
+}
+@media only screen and (max-width:320px){
+    .diagrams {
+        height: 61rem;
     }
 }
