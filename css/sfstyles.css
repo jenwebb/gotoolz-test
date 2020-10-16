@@ -376,7 +376,62 @@ footer {
     nav {
         padding: 0px 20px;
     }
-
+    .home-heading {
+        font-size: 4.25rem;
+    }
+    .section-one {
+        min-height: 620px;
+    }
+    .section-one, .section-two {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .section-three {
+        margin-left: -100px;
+        margin-right: -60px;
+    }
+    .section-five {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    #mission-statement {
+        margin-left: -40px;
+        margin-right: -40px;
+    }
+    #mission-statement p, .section-four p  {
+        font-size: 18px;;
+    }
+    #mission-statement h2.display-4 {
+        font-size: 2.7rem;
+        padding: 0!important;
+        margin-top: 1.25rem;
+    }
+    .diagram-middle i.fas.fa-user-friends {
+        font-size: 3.5rem;
+    }
+    .section-four {
+        padding-left: 60px;
+        padding-right: 0;
+    }
+    .support {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .section-six {
+        margin-left: -60px;
+        margin-right: -60px;
+    }
+    .social-links a.btn-lg {
+        padding-left: 16px!important;
+        font-size: 1.2rem;
+    }
+    .social-links a i {
+        font-size: 1.5rem;
+    }
+    .social-links .col-6.col-md-4.col-lg-2 {
+        padding-left: 8px;
+        padding-right: 7px;
+    }
 }
 @media only screen and (max-width: 970px) {
     html, body{
