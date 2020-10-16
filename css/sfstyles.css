@@ -409,6 +409,9 @@ footer {
     .diagram-middle i.fas.fa-user-friends {
         font-size: 3.5rem;
     }
+    .diagrams {
+        height: 30rem;
+    }
     .section-four {
         padding-left: 60px;
         padding-right: 0;
