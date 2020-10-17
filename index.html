@@ -215,7 +215,6 @@
     </div>
     <div class="modal" tabindex="-1" id="register">
         <div class="modal-dialog">
-        <form class="needs-validation" id="register-form">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title display-4">Register for free</h5>
@@ -226,58 +225,18 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col">
-                        <p>Please provide your name and a valid email address just one time
-                            and we'll send you your very own download link!</p>
-                        <div class="form-row pt-3">
-                            <div class="col-md-6 mb-3">
-                                <label for="first-name">First name</label>
-                                <input type="text" class="form-control"
-                                    id="first-name" required>
-                                <div class="valid-feedback">
-                                    <i class="fas fa-check"></i>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="last-name">Last name</label>
-                                <input type="text" class="form-control"
-                                    id="last-name" required>
-                                <div class="progress" id="meetup__msg_progress" style="display: none; height: 8px;">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"  style="width: 85%;"></div>
-                                </div>
-                                <div class="valid-feedback">
-                                    <i class="fas fa-check"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group pt-3">
-                            <label for="email">Email address</label>
-                            <input type="email" class="form-control" id="email"
-                                aria-describedby="emailHelp" required>
-                                <div class="valid-feedback">
-                                    <i class="fas fa-check"></i>
-                                </div>
-                            <small id="emailHelp"
-                                class="form-text text-muted pb-3">We'll never
-                                share your email with anyone else.</small>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox"
-                                    value="" id="get-mail">
-                                <label class="form-check-label" for="get-mail">
-                                    Yes, I want to receive email updates from
-                                    SuprFanz!
-                                </label>
-                            </div>
-                            <div class="valid-feedback"><p>
-                                <i class="fas fa-check"></i> Thank you! Please check your email for the download link.</p></div>
+                        <p>Please sign in with your Google account to get to the download page.</p>
+                        <div class="form-group pt-4 pb-3 text-center" id="google-login">
+                            <a class="btn btn-primary" id="google-btn" href="#"><i class="fab fa-google mr-2"></i>Sign in with Google</a>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="modal-footer">
-              <button type="submit" class="btn btn-primary">Submit</button>
+              
             </div>
-          </div></form>
+          </div>
         </div>
       </div>
     <script src="js/jquery-3.4.1.min.js"></script>
@@ -303,6 +262,19 @@
                     });
                 }
             });
+            $('#google-btn').click(function(e){
+                e.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    dataType: 'json',
+                    crossDomain: true,
+                    url:"http://ec2-54-172-99-104.compute-1.amazonaws.com/login"
+                }).done(function(response){
+                    $('#google-login').html(response);
+                });
+                $('#google-login').load("http://ec2-54-172-99-104.compute-1.amazonaws.com/login")
+                
+            });
             $('#register-form').submit(function(e){
                 e.preventDefault();
                 var data = JSON.stringify({
@@ -325,7 +297,6 @@
                     });
             });
             $('#register').on('show.bs.modal', function(){
-                $('#register-form')[0].reset();
                 $('.valid-feedback').hide();
                 $(this).find('button[type=submit]').attr('disabled', false);
             });
