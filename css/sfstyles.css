@@ -207,7 +207,7 @@ button.home-link::after {
 }
 
 .diagrams {
-    height: 36rem;
+    height: 39rem;
 }
 
 .diagram i, .diagram-middle i {
@@ -250,10 +250,6 @@ button.home-link::after {
 }
 .diagram-middle i.fas.fa-long-arrow-alt-down {
     margin-left: 34px;
-}
-.text-center i.fas.fa-long-arrow-alt-up {
-    margin-right: 50%;
-    margin-left: 10%;
 }
  i.fas.fa-long-arrow-alt-down {
     margin-left: 2rem!important;
@@ -601,9 +597,6 @@ footer {
     .diagram-middle i.fas {
         font-size: 3.8rem;
     }
-    .text-center i.fas.fa-long-arrow-alt-up {
-        margin-left: 7%;
-    }
     .diagram-middle i.fas.fa-user-friends {
         font-size: 5.75rem;
     }
@@ -637,5 +630,10 @@ footer {
 @media only screen and (max-width:320px){
     .diagrams {
         height: 61rem;
+    }
+}
+@media only screen and (min-width:1920px) {
+    .diagrams {
+        height: 48rem;
     }
 }
